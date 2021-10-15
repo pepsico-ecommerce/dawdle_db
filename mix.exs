@@ -78,7 +78,7 @@ defmodule DawdleDB.MixProject do
       {:poison, "~> 3.0 or ~> 4.0"},
       {:swarm, "~> 3.4"},
       {:postgrex, "~> 0.15.3"},
-      {:telemetry, "~> 0.4.0"},
+      {:telemetry, "~> 1.0"},
       {:timex, "~> 3.5"}
     ]
   end
