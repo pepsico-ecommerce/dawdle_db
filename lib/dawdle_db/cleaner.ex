@@ -51,9 +51,7 @@ defmodule DawdleDB.Cleaner do
 
   defp log_cleanup_errors(result) do
     Logger.error(
-      "Cleaned #{result.num_rows} from watcher events table: #{
-        inspect(result.rows)
-      }"
+      "Cleaned #{result.num_rows} from watcher events table: #{inspect(result.rows)}"
     )
   end
 end

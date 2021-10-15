@@ -65,7 +65,7 @@ defmodule DawdleDB.MixProject do
     [
       {:confex, "~> 3.4"},
       {:credo, "~> 1.0", only: [:dev, :test], runtime: false},
-      {:dawdle, "~> 0.7"},
+      dawdle_dep(),
       {:dialyxir, "~> 1.0.0-rc.4", only: [:dev], runtime: false},
       {:ecto, "~> 3.0"},
       {:ecto_sql, "~> 3.0"},
@@ -78,7 +78,7 @@ defmodule DawdleDB.MixProject do
       {:poison, "~> 3.0 or ~> 4.0"},
       {:swarm, "~> 3.4"},
       {:postgrex, "~> 0.15.3"},
-      {:telemetry, "~> 0.4.0"},
+      {:telemetry, "~> 1.0"},
       {:timex, "~> 3.5"}
     ]
   end
@@ -110,5 +110,13 @@ defmodule DawdleDB.MixProject do
       main: "readme",
       extras: ["README.md"]
     ]
+  end
+
+  defp dawdle_dep do
+    if path = System.get_env("DAWDLE_PATH") do
+      {:dawdle, path: path}
+    else
+      {:dawdle, github: "pepsico-ecommerce/dawdle"}
+    end
   end
 end
